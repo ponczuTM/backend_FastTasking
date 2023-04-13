@@ -24,7 +24,7 @@ export class DbInitializer {
 
     async initialize() : Promise<void> {
         await this.departmentRepository.save({
-            name: "Urząd Marszałkowski Toruń",
+            name: "MC Donald's",
             location: "ul. Piernikowa 12/9",
             managerFirstName: "Józef",
             managerLastName: "Talar",
