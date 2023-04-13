@@ -102,8 +102,8 @@ export class DbInitializer {
                 role: { id: 2 }
             },
             {
-                email: "jton@gmail.com",
-                passwordHash: "41e7f0ee7556dcabcdb0d019fe0b0568",
+                email: "jtona@gmail.com",
+                passwordHash: "b01a93599116d2272d1e4fe146d9cacf",
                 firstName: "Jan",
                 lastName: "Tona",
                 department: {id: 1},
@@ -129,8 +129,8 @@ export class DbInitializer {
                 role: { id: 3 }
             },
             {
-                email: "dela@gmail.com",
-                passwordHash: "4e4a3b45c22f1be8f65067b617722ad6",
+                email: "edom@gmail.com",
+                passwordHash: "217303e52413d95657c2ef519d5791db",
                 firstName: "Ela",
                 lastName: "Dom",
                 department: {id: 1},
