@@ -25,23 +25,30 @@ export class DbInitializer {
     async initialize() : Promise<void> {
         await this.departmentRepository.save({
             name: "MC Donald's",
-            location: "ul. Piernikowa 12/9",
-            managerFirstName: "Józef",
-            managerLastName: "Talar",
-            managerEmail: "jtalar@gmail.com" 
+            location: "ul. Smaczna 12/9",
+            managerFirstName: "Jan",
+            managerLastName: "Kowalski",
+            managerEmail: "jkowalski@gmail.com" 
+        });
+        await this.departmentRepository.save({
+            name: "KFC",
+            location: "ul. Pszna 12",
+            managerFirstName: "Jan",
+            managerLastName: "Kowalski",
+            managerEmail: "jkowalski@gmail.com" 
         });
         await this.roleRepository.save([
             {
                 key: "admin",
-                name: "Administrator"
+                name: "Szef"
             },
             {
                 key: "leader",
-                name: "Prowadzący"
+                name: "kierownik zespołu"
             },
             {
                 key: "common",
-                name: "Zwykły"
+                name: "pracownik"
             }
         ]);
         await this.sexRepository.save([
@@ -185,32 +192,32 @@ export class DbInitializer {
         ]);
         await this.targetRepository.save([
             {
-                name: "Basen Hallera",
+                name: "Drukarnia Hallera",
                 location: "ul. Generała Józefa Hallera 79, 87-100 Toruń",
                 department: { id: 1}
             },
             {
-                name: "Basen Bażyńskich",
-                location: "ul. Bażynskich 9, 87-100 Toruń",
+                name: "Rozlewnia farb i lakierów",
+                location: "ul. Suchodolskiego 1b, 87-100 Toruń",
                 department: { id: 1}
             },
             {
-                name: "Bella Line Wellness Centrum",
+                name: "Dział IT",
                 location: "ul. Stanisława Żółkiewskiego 8, 87-100 Toruń",
                 department: { id: 1}
             },
             {
-                name: "CrossFox Polna",
+                name: "Catering",
                 location: "ul. Polna 134-136/Hala nr 7, 87-100 Toruń",
                 department: { id: 1}
             },
             {
-                name: "Szkoła Walki Golden Dragon",
+                name: "Kotły Gazowe Toruń",
                 location: "ul. Marii Skłodowskiej Curie 16, 85-094 Bydgoszcz",
                 department: { id: 1}
             },
             {
-                name: "Całodobowy obiekt sportowy",
+                name: "TZMO Toruń",
                 location: "ul. Nielimitowana 1, 87-100 Toruń",
                 department: { id: 1}
             }
@@ -222,19 +229,19 @@ export class DbInitializer {
         await this.scheduleItemRepository.save([
             {
                 from: "2022-11-04T08:00Z",
-                to: "2022-11-04T10:00Z",
+                to: "2022-11-04T16:00Z",
                 kind: ScheduleItemKind.Cyclic,
                 schedule: { id: 1 }
             },
             {
                 from: "2022-11-12T08:00Z",
-                to: "2022-11-12T10:00Z",
+                to: "2022-11-12T16:00Z",
                 kind: ScheduleItemKind.SinglePresence,
                 schedule: { id: 1 }
             },
             {
                 from: "2022-11-18T08:00Z",
-                to: "2022-11-18T10:00Z",
+                to: "2022-11-18T16:00Z",
                 kind: ScheduleItemKind.SingleAbsence,
                 schedule: { id: 1 }
             },
@@ -245,8 +252,8 @@ export class DbInitializer {
         });
         await this.scheduleItemRepository.save([
             {
-                from: "2022-11-07T08:30Z",
-                to: "2022-11-07T09:30Z",
+                from: "2022-11-07T10:00Z",
+                to: "2022-11-07T18:00Z",
                 kind: ScheduleItemKind.Cyclic,
                 schedule: { id: 2 }
             }
@@ -257,13 +264,13 @@ export class DbInitializer {
         });
         await this.scheduleItemRepository.save([
             {
-                from: "2022-11-02T16:00Z",
+                from: "2022-11-02T10:00Z",
                 to: "2022-11-02T18:00Z",
                 kind: ScheduleItemKind.Cyclic,
                 schedule: { id: 3 }
             },
             {
-                from: "2022-12-28T16:00Z",
+                from: "2022-12-28T10:00Z",
                 to: "2022-12-28T18:00Z",
                 kind: ScheduleItemKind.SingleAbsence,
                 schedule: { id: 3 }
@@ -276,7 +283,7 @@ export class DbInitializer {
         });
         await this.scheduleItemRepository.save([
             {
-                from: "2022-11-03T16:00Z",
+                from: "2022-11-03T10:00Z",
                 to: "2022-11-03T18:00Z",
                 kind: ScheduleItemKind.Cyclic,
                 schedule: { id: 4 }
@@ -288,7 +295,7 @@ export class DbInitializer {
         });
         await this.scheduleItemRepository.save([
             {
-                from: "2022-11-07T15:00Z",
+                from: "2022-11-07T08:30Z",
                 to: "2022-11-07T16:30Z",
                 kind: ScheduleItemKind.Cyclic,
                 schedule: { id: 5 }
@@ -301,7 +308,7 @@ export class DbInitializer {
         await this.scheduleItemRepository.save([
             {
                 from: "2022-12-01T10:00Z",
-                to: "2022-12-01T11:00Z",
+                to: "2022-12-01T18:00Z",
                 kind: ScheduleItemKind.Cyclic,
                 schedule: { id: 6 }
             },
